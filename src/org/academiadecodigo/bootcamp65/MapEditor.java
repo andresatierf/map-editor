@@ -84,4 +84,35 @@ public class MapEditor {
             cell.show();
         }
     }
+
+    public void saveGrid() {
+        this.saveLoad.writeFile(this.saveLoad.convertMapToString(this.cells));
+    }
+
+    public void loadGrid() {
+        this.cells = this.saveLoad.convertStringToMap(this.saveLoad.readFile());
+        for (Cell cell : cells) {
+            cell.show();
+        }
+    }
+
+    public void clearGrid() {
+        for (Cell cell : cells) {
+            cell.setPainted(false);
+            cell.setColor(Color.BLACK);
+            cell.show();
+        }
+    }
+
+    public void nextColor() {
+        this.currentColor  = (this.currentColor + 1 + 13) % 13;
+        this.sample.setColor(JavaColors.colors[currentColor]);
+        this.sample.show();
+    }
+
+    public void previousColor() {
+        this.currentColor  = (this.currentColor - 1 + 13) % 13;
+        this.sample.setColor(JavaColors.colors[currentColor]);
+        this.sample.show();
+    }
 }
