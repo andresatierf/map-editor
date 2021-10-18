@@ -2,7 +2,6 @@ package org.academiadecodigo.bootcamp65.grid.position;
 
 import org.academiadecodigo.bootcamp65.grid.Grid;
 import org.academiadecodigo.bootcamp65.grid.GridDirection;
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 import java.awt.*;
 
@@ -64,25 +63,25 @@ public abstract class AbstractGridPosition implements GridPosition{
     }
 
     private void moveUp() {
-        setPos(getCol(), getRow() == 0 ? getRow() : getRow() - 1);
+        setPos(getCol(), getRow() - 1  < 0 ? getRow() : getRow() - 1);
     }
 
     private void moveRight() {
-        setPos(getCol() == grid.getCols() - 1 ? getCol() : getCol() + 1, getRow());
+        setPos(getCol() + 1 > grid.getCols() - 1 ? getCol() : getCol() + 1, getRow());
     }
 
     private void moveDown() {
-        setPos(getCol(), getRow() == 0 ? getRow() : getRow() + 1);
+        setPos(getCol(), getRow() + 1 > grid.getRows() - 1 ? getRow() : getRow() + 1);
     }
 
     public void moveLeft() {
-        setPos(getCol() == 0 ? getCol() : getCol() - 1, getRow());
+        setPos(getCol() - 1 < 0 ? getCol() : getCol() - 1, getRow());
 
     }
 
     @Override
     public boolean equals(GridPosition position) {
-        return false;
+        return this.getCol() == position.getCol() && this.getRow() == position.getRow();
     }
 
 }

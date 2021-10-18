@@ -18,6 +18,8 @@ public interface GridPosition {
 
     public void show();
 
+    public void draw();
+
     public void hide();
 
     public void moveInDirection(GridDirection direction);
