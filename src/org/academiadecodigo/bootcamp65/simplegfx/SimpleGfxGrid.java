@@ -21,6 +21,12 @@ public class SimpleGfxGrid implements Grid {
     public void init() {
         Rectangle grid = new Rectangle(PADDING, PADDING, cols * CELL_SIZE, rows * CELL_SIZE);
         grid.draw();
+        /*for (int i = 0; i < cols; i++) {
+            for (int j = 0; j < rows; j++) {
+                Rectangle rect = new Rectangle(i * CELL_SIZE + PADDING, j * CELL_SIZE + PADDING, CELL_SIZE, CELL_SIZE);
+                rect.draw();
+            }
+        }/**/
     }
 
     @Override
@@ -41,5 +47,13 @@ public class SimpleGfxGrid implements Grid {
     @Override
     public GridPosition makeGridPosition(int col, int row) {
         return new SimpleGfxGridPosition(col, row, this);
+    }
+
+    public int colToX(int col) {
+        return col * CELL_SIZE + PADDING;
+    }
+
+    public int rowToY(int row) {
+        return row * CELL_SIZE + PADDING;
     }
 }
