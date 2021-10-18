@@ -29,7 +29,31 @@ public class SimpleGfxGridPosition extends AbstractGridPosition {
     }
 
     @Override
+    public void draw() {
+        this.rectangle.draw();
+    }
+
+    @Override
     public void hide() {
         this.rectangle.delete();
+    }
+
+    @Override
+    public void setColor(Color color) {
+        super.setColor(color);
+        this.rectangle.setColor(SimpleGfxColorMapper.getColor(color));
+    }
+
+    @Override
+    public void moveInDirection(GridDirection direction) {
+        int startCol = getCol();
+        int startRow = getRow();
+
+        super.moveInDirection(direction);
+
+        int colDiff = (getCol() - startCol) * SimpleGfxGrid.CELL_SIZE;
+        int rowDiff = (getRow() - startRow) * SimpleGfxGrid.CELL_SIZE;
+
+        this.rectangle.translate(colDiff, rowDiff);
     }
 }
