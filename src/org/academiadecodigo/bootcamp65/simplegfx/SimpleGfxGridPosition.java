@@ -1,19 +1,26 @@
 package org.academiadecodigo.bootcamp65.simplegfx;
 
-import org.academiadecodigo.bootcamp65.grid.Grid;
+import org.academiadecodigo.bootcamp65.grid.GridDirection;
 import org.academiadecodigo.bootcamp65.grid.position.AbstractGridPosition;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
+import java.awt.*;
+
 public class SimpleGfxGridPosition extends AbstractGridPosition {
 
+    private SimpleGfxGrid simpleGfxGrid;
     private Rectangle rectangle;
 
-    public SimpleGfxGridPosition(Grid grid) {
+    public SimpleGfxGridPosition(SimpleGfxGrid grid) {
         super((int) (Math.random() * grid.getCols()), ((int) (Math.random() * grid.getRows())), grid);
+        simpleGfxGrid = grid;
+        this.rectangle = new Rectangle(grid.colToX(getCol()), grid.rowToY(getRow()), SimpleGfxGrid.CELL_SIZE, SimpleGfxGrid.CELL_SIZE);
     }
 
-    public SimpleGfxGridPosition(int col, int row, Grid grid) {
+    public SimpleGfxGridPosition(int col, int row, SimpleGfxGrid grid) {
         super(col, row, grid);
+        simpleGfxGrid = grid;
+        this.rectangle = new Rectangle(grid.colToX(getCol()), grid.rowToY(getRow()), SimpleGfxGrid.CELL_SIZE, SimpleGfxGrid.CELL_SIZE);
     }
 
     @Override
