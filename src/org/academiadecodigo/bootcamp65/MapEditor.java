@@ -6,7 +6,7 @@ import org.academiadecodigo.bootcamp65.grid.Grid;
 import org.academiadecodigo.bootcamp65.grid.GridFactory;
 import org.academiadecodigo.bootcamp65.handlers.KbHandler;
 import org.academiadecodigo.bootcamp65.io.SaveLoad;
-import org.academiadecodigo.bootcamp65.simplegfx.SimpleGfxColorMapper;
+import org.academiadecodigo.bootcamp65.utils.JavaColors;
 
 import java.awt.*;
 import java.util.ArrayList;

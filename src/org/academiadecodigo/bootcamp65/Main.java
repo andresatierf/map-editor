@@ -8,6 +8,5 @@ public class Main {
         MapEditor mapEditor = new MapEditor(30,30);
         mapEditor.init();
         mapEditor.start();
-
     }
 }

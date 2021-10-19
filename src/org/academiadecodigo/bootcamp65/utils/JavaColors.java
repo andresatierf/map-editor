@@ -1,4 +1,4 @@
-package org.academiadecodigo.bootcamp65;
+package org.academiadecodigo.bootcamp65.utils;
 
 
 import java.awt.*;

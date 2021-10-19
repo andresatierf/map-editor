@@ -1,6 +1,6 @@
 package org.academiadecodigo.bootcamp65.io;
 
-import org.academiadecodigo.bootcamp65.JavaColors;
+import org.academiadecodigo.bootcamp65.utils.JavaColors;
 import org.academiadecodigo.bootcamp65.entities.Cell;
 import org.academiadecodigo.bootcamp65.grid.Grid;
 
